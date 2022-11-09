@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface FlightRepository extends JpaRepository<Flight, Integer> {
-    @Query("FROM Flight WHERE departureCity= :departureCity")
+    @Query("FROM Flight WHERE departure_city_id= :departureCity")
     List<Flight> getAllFlightsByDepartureCityId(@Param("departureCity") int departureCityId);
 
     @Query("FROM Flight WHERE departureCity= :departureCity AND arrivalCity= :arrivalCity")

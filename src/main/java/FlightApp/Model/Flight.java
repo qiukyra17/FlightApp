@@ -17,17 +17,20 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
-    private int airlineId;
+    @OneToOne
+    @JoinColumn(name = "airline_id")
+    private Airline airline;
 
-    @Column
-    private int departureCity;
+    @OneToOne
+    @JoinColumn(name = "departureCity_id")
+    private City depatureCity;
 
     @Column
     private Time departureTime;
 
-    @Column
-    private int arrivalCity;
+    @OneToOne
+    @JoinColumn(name = "arrivalCity_id")
+    private City arrivalCity;
 
     @Column
     private Time arrivalTime;
